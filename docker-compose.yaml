@@ -6,14 +6,12 @@ services:
       context: .
       dockerfile: ./app/Dockerfile
     ports:
-      - "8000:8000"
-#    volumes:
-#      - ../processor:/optimus/processor
-#      - ../config:/config
-#      - ../enrichutils:/optimus/enrichutils
-#      - ../secrets/credentials.json:/secrets/credentials.json
+      - "80:80" # host:container
     environment:
       PORT: 8000
+    volumes:
+      - ./app:/app # add volume so code edited locally is mounted in container automatically
+    restart: always
     image: "fastapi-demo:v1"
 #    depends_on:
 #      - postgresql
