@@ -1,0 +1,14 @@
+
+apiVersion: fastapi-demo/v1
+kind: Service
+metadata:
+  name: fastapi-demo-app
+spec:
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 80
+  template:
+    spec:
+      containers:
+      - image: gcr.io/fastapi-demo-321709/fastapi-demo

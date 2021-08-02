@@ -12,7 +12,7 @@ services:
     volumes:
       - ./app:/app # add volume so code edited locally is mounted in container automatically
     restart: always
-    image: "fastapi-demo:v1"
+    image: "fastapi-demo"
 #    depends_on:
 #      - postgresql
 #      - elasticsearch-master
